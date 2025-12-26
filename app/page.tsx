@@ -381,9 +381,7 @@ const Home = () => {
       <section className="py-16 lg:py-20 bg-secondary">
         <div className="container-wide px-6 lg:px-12">
           <FadeIn>
-            <p className="text-center text-muted-foreground text-sm tracking-widest uppercase mb-10">
-              Partenaires de confiance
-            </p>
+            <h2 className="heading-section mb-8 text-center">Partenaires de confiance</h2>
           </FadeIn>
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
             {partners.map((partner, index) => (
@@ -411,7 +409,7 @@ const Home = () => {
               Créons quelque chose de beau
             </h2>
             <Link href="/contact" className="btn-primary">
-              Créons ensemble
+              Concevoir votre projet
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </FadeIn>
