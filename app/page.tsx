@@ -74,12 +74,30 @@ const testimonials = [
 ];
 
 const partners = [
-  "Herman Miller",
-  "Knoll",
-  "Steelcase",
-  "Vitra",
-  "B&B Italia",
-  "Cassina",
+  {
+    name: "OCP",
+    image: "/dwp-part-6.png",
+  },
+  {
+    name: "masen",
+    image: "/dwp-part-1.png",
+  },
+  {
+    name: "lamatem",
+    image: "/dwp-part-2.png",
+  },
+  {
+    name: "CMC",
+    image: "/dwp-part-3.png",
+  },
+  {
+    name: "aefe",
+    image: "/dwp-part-4.png",
+  },
+  {
+    name: "ABS",
+    image: "/dwp-part-5.png",
+  },
 ];
 
 const Home = () => {
@@ -148,7 +166,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Link href="/services" className="btn-accent">
-              Découvrir nos réalisations
+              Découvrir nos portfolio
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </motion.div>
@@ -260,7 +278,7 @@ const Home = () => {
             {services.map((service, index) => (
               <FadeIn key={service.title} delay={index * 0.1}>
                 <div className="text-center group">
-                  <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-white border border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
                     <service.icon size={28} strokeWidth={1.5} />
                   </div>
                   <h3 className="font-serif text-xl tracking-wide mb-3">
@@ -339,14 +357,14 @@ const Home = () => {
               <h2 className="heading-section mb-8">Nos engagements qualité</h2>
               <div className="flex justify-center items-center gap-12">
                 <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center">
-                    <span className="text-accent-foreground font-bold text-xl">ISO</span>
+                  <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                    <Image src="/dwp-iso.png" alt="ISO Certification" width={90} height={90} />
                   </div>
                   <p className="text-sm">Certification ISO</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center">
-                    <span className="text-accent-foreground font-bold text-xl">HQE</span>
+                  <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                    <Image src="/dwp-HQE.webp" alt="HQE Certification" width={90} height={90} />
                   </div>
                   <p className="text-sm">Haute Qualité Environnementale</p>
                 </div>
@@ -366,10 +384,14 @@ const Home = () => {
           </FadeIn>
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
             {partners.map((partner, index) => (
-              <FadeIn key={partner} delay={index * 0.05}>
-                <span className="text-muted-foreground/50 font-serif text-xl lg:text-2xl tracking-wider hover:text-foreground transition-colors duration-300 cursor-default">
-                  {partner}
-                </span>
+              <FadeIn key={partner.name} delay={index * 0.05}>
+                <Image
+                  src={partner.image}
+                  alt={partner.name}
+                  width={150}
+                  height={59}
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-default"
+                />
               </FadeIn>
             ))}
           </div>
